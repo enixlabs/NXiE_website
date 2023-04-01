@@ -1,0 +1,21 @@
+<mat-toolbar class="bg-gray-900 text-white">
+  <ng-container>
+    <button mat-icon-button (click)="toggleSidenav()" class="mr-2">
+      <a>
+        <img src="assets/images/logo/nxie.logo.png" alt="Logo" class="logo" />
+      </a>
+    </button>
+    <button mat-button [routerLink]="'hypercube'">Creators</button>
+    <button mat-button [routerLink]="'hypercube'">Categories</button>
+    <div class="flex-1"></div>
+    <button mat-button [routerLink]="'hypercube'">
+      Help Center
+    </button>
+    <button mat-stroked-button color="primary" [routerLink]="'hypercube'">
+      Register
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon class="mr-2">open_in_new</mat-icon>
+    </button>
+  </ng-container>
+</mat-toolbar>

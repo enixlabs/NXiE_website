@@ -1,0 +1,15 @@
+<mat-sidenav-container class="holy-grail-body">
+  <mat-sidenav
+    class="holy-grail-sidebar-1 hg-sidebar bg-gray-900"
+    #sideNavLeft
+    opened="true"
+  >
+<!--    <ng-container *ngIf="menuItems">-->
+
+<!--    </ng-container>-->
+  </mat-sidenav>
+  <!--  <mat-sidenav #sideNavRight mode="side" position="end"></mat-sidenav>-->
+  <mat-sidenav-content class="holy-grail-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
