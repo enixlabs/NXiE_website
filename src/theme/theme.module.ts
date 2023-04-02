@@ -1,11 +1,18 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { ChatComponent } from './components/chat/chat.component';
+import { LibraryComponent } from './components/library/library.component';
 
+const themeComponents = [
+  ChatComponent,
+  LibraryComponent,
+];
 @NgModule({
   imports: [],
-  exports: [],
+  exports: [
+    ...themeComponents,
+  ],
   declarations: [
-    ChatComponent
+    ...themeComponents,
   ]
 })
 export class ThemeModule {

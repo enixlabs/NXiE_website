@@ -8,10 +8,18 @@ import { appRoutes } from "./app.routes";
 import { CoreModule } from "../settings/core/core.module";
 import { ThemeModule } from "../theme/theme.module";
 import { LayoutModule } from "../layout/layout.module";
+import { CategoriesComponent } from './public/categories/categories.component';
+import { CreatorsComponent } from './public/creators/creators.component';
+import { VideosComponent } from './public/videos/videos.component';
+import { HelpCenterComponent } from './help-center/help-center.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoriesComponent,
+    CreatorsComponent,
+    VideosComponent,
+    HelpCenterComponent
   ],
   imports: [
     BrowserModule,

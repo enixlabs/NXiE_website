@@ -4,7 +4,7 @@
   "main": "enix.main.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,10 +21,20 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@antmedia/videojs-webrtc-plugin": "^2.0.0",
+    "aes-decrypter": "^4.0.1",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "videojs-contextmenu-ui": "^7.0.0",
+    "videojs-contrib-dash": "^5.1.1",
+    "videojs-contrib-eme": "^3.11.1",
+    "videojs-contrib-quality-levels": "^4.0.0",
+    "videojs-fetch-flv": "^1.0.12",
+    "videojs-playlist": "^5.0.1",
+    "videojs-vr": "^2.0.0",
+    "videojs-watermark": "^2.0.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -46,6 +56,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "tailwindcss": "^3.3.1",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "video.js": "^8.0.4"
   }
 }

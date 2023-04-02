@@ -4,9 +4,13 @@
     #sideNavLeft
     opened="true"
   >
-<!--    <ng-container *ngIf="menuItems">-->
-
-<!--    </ng-container>-->
+    <ng-container *ngIf="!authenticated()">
+      <h1>Please Login</h1>
+      <p>You are currently not logged into your account, in order to view this menu, you are required to be logged in.</p>
+    </ng-container>
+    <ng-container *ngIf="authenticated()">
+      <p>Logged In</p>
+    </ng-container>
   </mat-sidenav>
   <!--  <mat-sidenav #sideNavRight mode="side" position="end"></mat-sidenav>-->
   <mat-sidenav-content class="holy-grail-content">
