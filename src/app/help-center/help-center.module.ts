@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {SharedModule} from "../../settings/shared/shared.module";
+import {RouterModule} from "@angular/router";
+import {helpCenterRoutes} from "./help-center.routes";
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    SharedModule,
+    RouterModule.forChild(helpCenterRoutes)
   ]
 })
 export class HelpCenterModule { }

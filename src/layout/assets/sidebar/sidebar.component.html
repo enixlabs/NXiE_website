@@ -9,11 +9,29 @@
       <p>You are currently not logged into your account, in order to view this menu, you are required to be logged in.</p>
     </ng-container>
     <ng-container *ngIf="authenticated()">
-      <p>Logged In</p>
+      <mat-card class="bg-transparent">
+        <mat-card-title class="p-2">
+          <mat-icon>account_circle</mat-icon>
+          <span>{{ user?.name }}</span>
+        </mat-card-title>
+      </mat-card>
+
+      <!--USER MENU-->
+      <ng-container *ngIf="menuItems">
+        <ul class="list text-start">
+          <li class="link" *ngFor="let menuItem of menuItems">
+            <mat-icon>{{ menuItem.icon }}</mat-icon>
+            <a class="pl-6" [routerLink]="menuItem.link">{{ menuItem.title }}</a>
+            <p>{{ menuItem.subtitle }}</p>
+          </li>
+        </ul>
+      </ng-container>
     </ng-container>
+
   </mat-sidenav>
   <!--  <mat-sidenav #sideNavRight mode="side" position="end"></mat-sidenav>-->
   <mat-sidenav-content class="holy-grail-content">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
+
 </mat-sidenav-container>

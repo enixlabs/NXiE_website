@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { StoresComponent } from './stores.component';
-
+import {SharedModule} from "../../../settings/shared/shared.module";
+import {RouterModule} from "@angular/router";
+import {storesRoutes} from "./stores.routes";
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { StoresComponent } from './stores.component';
     StoresComponent
   ],
   imports: [
-    CommonModule
+    SharedModule,
+    RouterModule.forChild(storesRoutes)
   ]
 })
 export class StoresModule { }

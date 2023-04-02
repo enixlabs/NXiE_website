@@ -2,7 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidebarService } from './sidebar.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import {AuthService} from "../../../settings/core/auth/auth.service";
+import { AuthService } from "../../../settings/core/auth/auth.service";
+import { NavMenu } from "./navigation/navMenu";
 
 
 @Component({
@@ -14,29 +15,43 @@ export class SidebarComponent {
   @ViewChild('sideNavLeft') public sideNavLeft!: MatSidenav;
   @ViewChild('sideNavRight') public sideNavRight!: MatSidenav;
   showFiller = false;
-  // menuItems: NavMenu[];
+  menuItems: NavMenu[];
+  userVisible$: any;
+  userMenuOpen$: any;
+  user: any;
 
   constructor(
     private sidenavService: SidebarService,
     private observer: BreakpointObserver,
     private authService: AuthService
   ) {
-    // this.menuItems = [
-    //   {
-    //     id: 'user.dashboard',
-    //     title: 'Dashboard',
-    //     subtitle: 'Everything for your account needs',
-    //     type: 'basic',
-    //     icon: 'heroicons_outline:chart-pie',
-    //   },
-    //   {
-    //     id: 'user.analytics',
-    //     title: 'Analytics',
-    //     subtitle: 'Realtime Data, that captures everything',
-    //     type: 'basic',
-    //     icon: 'heroicons_outline:chart-pie',
-    //   },
-    // ];
+    this.menuItems = [
+      {
+        id: 'user.dashboard',
+        title: 'Dashboard',
+        type: 'collapsable',
+        icon: 'dashboard',
+        children: [
+          {
+            id: 'user.dashboard',
+            title: 'Dashboard',
+            type: 'basic',
+          }
+        ],
+      },
+      {
+        id: 'user.analytics',
+        title: 'Analytics',
+        type: 'basic',
+        icon: 'analytics',
+      },
+      {
+        id: 'user.settings',
+        title: 'Settings',
+        type: 'basic',
+        icon: 'settings',
+      },
+    ];
   }
 
   authenticated() {
@@ -62,5 +77,9 @@ export class SidebarComponent {
         this.sideNavLeft.open().then((r) => console.log(r));
       }
     });
+  }
+
+  openProfileMenu(userProfileMenuOriginRef: HTMLDivElement) {
+
   }
 }

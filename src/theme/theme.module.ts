@@ -6,8 +6,10 @@ const themeComponents = [
   ChatComponent,
   LibraryComponent,
 ];
+
 @NgModule({
-  imports: [],
+  imports: [
+  ],
   exports: [
     ...themeComponents,
   ],
