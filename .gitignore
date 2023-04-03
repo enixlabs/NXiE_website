@@ -6,7 +6,7 @@
 /out-tsc
 /bazel-out
 /web
-
+/src/assets/video/music
 # Node
 /node_modules
 npm-debug.log
